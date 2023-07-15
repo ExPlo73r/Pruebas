@@ -26,6 +26,7 @@ nmaptest() {
 
 iptest() {
   clear
+   echo -ne "$greenColour\n[?]$redColour ScanMap by Viernez13 "
   echo -ne "$greenColour\n[?]$grayColour Introduce la IP: " && read ip
   ping -c 1 $ip | grep "ttl" > /dev/null 2>&1
   if [ "$(echo $?)" -ne 0 ]; then
@@ -35,12 +36,14 @@ iptest() {
 }
 
 if [ $(id -u) -ne 0 ]; then
+ echo -ne "$greenColour\n[?]$redColour ScanMap by Viernez13 "
 	echo -e "\n$redColour[!]$grayColour Debes ser root para ejecutar el script -> (sudo $0)"
 exit 1
 else
     nmaptest
     clear
     iptest
+     echo -ne "$greenColour\n[?]$redColour ScanMap by Viernez13 "
     while true; do
       echo -e "\n1) Escaneo rapido(pero más ruidoso que tu ex xD cuando te funó)"
       echo "2) Escaneo Normal x defecto"
@@ -76,7 +79,7 @@ else
 fi
 
 finish() {
-    echo -e "\n$redColour[!]$grayColour Cerrando el script..."
+    echo -e "\n$redColour[!]$grayColour Cerrando el script..., chaela watcho"
     exit 
 }
 
